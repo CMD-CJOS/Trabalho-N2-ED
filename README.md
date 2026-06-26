@@ -17,15 +17,17 @@ Desenvolver uma biblioteca Java (JAR) independente para manipulação de estrutu
 - **Gerenciamento**: SDK Java 21+
 
 ## 📁 Estrutura do Projeto
-/src
-├── ArvoreBinaria.java    # BST com busca recursiva
-├── EstruturaLinear.java  # Interface contratual genérica
-├── Fila.java             # Implementação FIFO
-├── ListaDupla.java       # Lista com inversão e inserção ordenada
-├── Main.java             # Caso de teste e demonstração
-├── No.java               # Classe base de referência de memória
-├── NoArvore.java         # Nó específico para hierarquia
-└── Pilha.java            # Implementação LIFO
+
+Abaixo está a organização dos arquivos fonte (`/src`) e suas respectivas finalidades:
+
+- `ArvoreBinaria.java`: Implementação de BST com busca recursiva.
+- `EstruturaLinear.java`: Interface contratual para padronização das operações.
+- `Fila.java`: Implementação da estrutura FIFO (First-In, First-Out).
+- `ListaDupla.java`: Lista duplamente encadeada com suporte a inversão e inserção ordenada.
+- `Main.java`: Ponto de entrada do sistema para testes e demonstração.
+- `No.java`: Classe base para encapsulamento de dados e referências de memória.
+- `NoArvore.java`: Nó especializado para estruturas hierárquicas.
+- `Pilha.java`: Implementação da estrutura LIFO (Last-In, First-Out).
 
 ## ⚙️ Como Executar
 1. Certifique-se de ter o **JDK 17 ou superior** instalado.
@@ -39,6 +41,7 @@ O arquivo `Main.java` realiza uma bateria de testes que imprime no console o est
 - **Exemplo de saída de Árvore**: A visualização em 2D mostra a hierarquia (raiz, subárvores esquerda/direita), permitindo mapear o caminho percorrido durante a busca.
 - **Exit Code 0**: A ausência de erros durante a execução dos testes de estresse (cargas massivas) garante a integridade da manipulação de ponteiros.
 
+## ⚙️ Diagrama de Classes
 ```mermaid
 classDiagram
     class No~T~ {
@@ -72,6 +75,7 @@ classDiagram
     No <-- ListaDupla
     No <-- Pilha
     No <-- Fila
+```
     
 ## 👨‍💻 Autores
 - **Carlos Junio Oliveira de Souza** (RA: 5170260)
