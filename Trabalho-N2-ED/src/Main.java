@@ -1,3 +1,8 @@
+import br.hierarquica.ArvoreBinaria;
+import br.linear.Fila;
+import br.linear.ListaDupla;
+import br.linear.Pilha;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== TESTE 1: LISTA DUPLAMENTE ENCADEADA ===");
@@ -50,8 +55,7 @@ public class Main {
         arvore.inserir(80);
         arvore.inserir(100);
         arvore.imprimir();
-        arvore.imprimirCaminho(100
-        );
+        arvore.imprimirCaminho(40);
 
         System.out.println("Busca pela chave 40: " + arvore.busca(40));
         System.out.println("Busca pela chave 99: " + arvore.busca(99));

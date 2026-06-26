@@ -1,3 +1,8 @@
+package br.linear;
+
+import br.estrutura.EstruturaLinear;
+import br.estrutura.No;
+
 public class ListaDupla<T extends Comparable<T>> implements EstruturaLinear<T> {
     private No<T> inicio;
     private No<T> fim;

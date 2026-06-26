@@ -1,3 +1,5 @@
+package br.estrutura;
+
 public class No<T> {
     private T dado;
     private No<T> proximo;

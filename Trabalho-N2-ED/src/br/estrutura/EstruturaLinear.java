@@ -1,3 +1,5 @@
+package br.estrutura;
+
 public interface EstruturaLinear<T> {
     void adicionar(T elemento);
     T remover();

@@ -1,4 +1,6 @@
+package br.hierarquica;
 
+import br.estrutura.NoArvore;
 
 public class ArvoreBinaria<T extends Comparable<T>> {
     private NoArvore<T> raiz;

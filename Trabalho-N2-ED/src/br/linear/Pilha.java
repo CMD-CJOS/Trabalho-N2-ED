@@ -1,3 +1,8 @@
+package br.linear;
+
+import br.estrutura.EstruturaLinear;
+import br.estrutura.No;
+
 public class Pilha<T> implements EstruturaLinear<T> {
     private No<T> topo;
     private int tamanho;
