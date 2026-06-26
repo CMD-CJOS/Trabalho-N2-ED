@@ -24,15 +24,21 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     }
 
     public void imprimir() {
-        imprimirInOrdem(raiz);
+        if (raiz == null) {
+            System.out.println("Arvore Vazia");
+            return;
+        }
+        imprimirRecursivo(raiz, "", true);
         System.out.println();
     }
 
-    private void imprimirInOrdem(NoArvore<T> atual) {
-        if (atual != null) {
-            imprimirInOrdem(atual.esquerda);
-            System.out.print(atual.dado + " ");
-            imprimirInOrdem(atual.direita);
+    private void imprimirRecursivo(NoArvore<T> atual, String prefixo, boolean isCauda) {
+        if (atual.direita != null) {
+            imprimirRecursivo(atual.direita, prefixo + (isCauda ? "│   " : "    "), false);
+        }
+        System.out.println(prefixo + (isCauda ? "└── " : "┌── ") + atual.dado);
+        if (atual.esquerda != null) {
+            imprimirRecursivo(atual.esquerda, prefixo + (isCauda ? "    " : "│   "), true);
         }
     }
 
@@ -50,5 +56,26 @@ public class ArvoreBinaria<T extends Comparable<T>> {
         return dado.compareTo(atual.dado) < 0
                 ? buscaRecursiva(atual.esquerda, dado)
                 : buscaRecursiva(atual.direita, dado);
+    }
+
+    public void imprimirCaminho(T dado) {
+        System.out.print("Caminho para " + dado + ": ");
+        if (!buscaCaminho(raiz, dado)) {
+            System.out.println("Não encontrado.");
+        } else {
+            System.out.println("Fim.");
+        }
+    }
+
+    private boolean buscaCaminho(NoArvore<T> atual, T dado) {
+        if (atual == null) return false;
+
+        System.out.print(atual.dado + " -> "); // Exibe o nó por onde está passando
+
+        if (dado.equals(atual.dado)) return true;
+
+        return dado.compareTo(atual.dado) < 0
+                ? buscaCaminho(atual.esquerda, dado)
+                : buscaCaminho(atual.direita, dado);
     }
 }

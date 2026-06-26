@@ -46,7 +46,12 @@ public class Main {
         arvore.inserir(70);
         arvore.inserir(20);
         arvore.inserir(40);
+        arvore.inserir(10);
+        arvore.inserir(80);
+        arvore.inserir(100);
         arvore.imprimir();
+        arvore.imprimirCaminho(100
+        );
 
         System.out.println("Busca pela chave 40: " + arvore.busca(40));
         System.out.println("Busca pela chave 99: " + arvore.busca(99));
