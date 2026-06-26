@@ -17,3 +17,65 @@ Desenvolver uma biblioteca Java (JAR) independente para manipulação de estrutu
 - **Gerenciamento**: SDK Java 21+
 
 ## 📁 Estrutura do Projeto
+/src
+├── ArvoreBinaria.java    # BST com busca recursiva
+├── EstruturaLinear.java  # Interface contratual genérica
+├── Fila.java             # Implementação FIFO
+├── ListaDupla.java       # Lista com inversão e inserção ordenada
+├── Main.java             # Caso de teste e demonstração
+├── No.java               # Classe base de referência de memória
+├── NoArvore.java         # Nó específico para hierarquia
+└── Pilha.java            # Implementação LIFO
+
+## ⚙️ Como Executar
+1. Certifique-se de ter o **JDK 17 ou superior** instalado.
+2. Clone este repositório em sua máquina.
+3. Abra o projeto no IntelliJ IDEA.
+4. Caso a pasta `src` não esteja azul, clique com o botão direito nela > **Mark Directory as** > **Sources Root**.
+5. Execute o arquivo `Main.java` clicando no ícone de "Play" ao lado do método `main`.
+
+## 🧪 Testes e Resultados
+O arquivo `Main.java` realiza uma bateria de testes que imprime no console o estado das estruturas após cada manipulação.
+- **Exemplo de saída de Árvore**: A visualização em 2D mostra a hierarquia (raiz, subárvores esquerda/direita), permitindo mapear o caminho percorrido durante a busca.
+- **Exit Code 0**: A ausência de erros durante a execução dos testes de estresse (cargas massivas) garante a integridade da manipulação de ponteiros.
+
+```mermaid
+classDiagram
+    class No~T~ {
+        -T dado
+        -No proximo
+        -No anterior
+    }
+    class EstruturaLinear~T~ {
+        <<interface>>
+        +adicionar(T elemento)
+        +remover() T
+        +busca(T elemento) boolean
+        +tamanho() int
+    }
+    class ListaDupla~T~ {
+        +inserirOrdenado(T elemento)
+        +inverter()
+    }
+    class Pilha~T~ {
+        +push(T elemento)
+        +pop() T
+    }
+    class Fila~T~ {
+        +enqueue(T elemento)
+        +dequeue() T
+    }
+    
+    EstruturaLinear <|.. ListaDupla
+    EstruturaLinear <|.. Pilha
+    EstruturaLinear <|.. Fila
+    No <-- ListaDupla
+    No <-- Pilha
+    No <-- Fila
+    
+## 👨‍💻 Autores
+- **Carlos Junio Oliveira de Souza** (RA: 5170260)
+- **Thiago Mendes** (RA: 5170162)
+
+---
+*Projeto desenvolvido para a disciplina de Estrutura de Dados I - UNIUBE (2026).*
